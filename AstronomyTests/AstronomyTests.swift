@@ -7,27 +7,55 @@
 //
 
 import XCTest
+@testable import Astronomy
 
-class AstronomyTests: XCTestCase {
-
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+class MockLoader: NetworkDataLoader {
+    
+    init(data: Data?, error: Error?) {
+        self.data = data
+        self.error = error
     }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    
+    let data: Data?
+    let error: Error?
+    private(set) var request: URLRequest? = nil
+    private(set) var url: URL? = nil
+    
+    
+    func loadData(from request: URLRequest, completion: @escaping (Data?, Error?) -> Void) {
+        self.request = request
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            completion(self.data, self.error)
         }
     }
+    
+    func loadData(from url: URL, completion: @escaping (Data?, Error?) -> Void) {
+        self.url = url
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            completion(self.data, self.error)
+        }
+    }
+    
+}
 
+class MarsRoverClientTests: XCTestCase {
+
+    override func setUp() {
+        
+    }
+    
+    func testValidRoverData() {
+        let mockLoader = MockLoader(data: validRoverJSON, error: nil)
+        let marsRoverClient = MarsRoverClient(dataLoader: mockLoader)
+        
+        let expectation = self.expectation(description: "Perform MarsRover Fetch")
+        marsRoverClient.fetchMarsRover(named: "Curiosity") { (rover, error) in
+            XCTAssertNotNil(mockLoader.url)
+            XCTAssertNotNil(rover)
+            XCTAssertEqual("Curiosity", rover!.name)
+            expectation.fulfill()
+        }
+        waitForExpectations(timeout: 5.0, handler: nil)
+    }
+    
 }

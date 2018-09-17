@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3DB141332150470B00D85DD9 /* AstronomyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB141322150470B00D85DD9 /* AstronomyTests.swift */; };
 		3DB1413B2150482900D85DD9 /* NetworkDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB1413A2150482900D85DD9 /* NetworkDataLoader.swift */; };
+		3DB1413D215053A900D85DD9 /* TestJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB1413C215053A900D85DD9 /* TestJSON.swift */; };
 		9DBD20092140D1300047905E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBD20082140D1300047905E /* AppDelegate.swift */; };
 		9DBD20102140D1300047905E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DBD200F2140D1300047905E /* Assets.xcassets */; };
 		9DBD20132140D1300047905E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DBD20112140D1300047905E /* LaunchScreen.storyboard */; };
@@ -42,6 +43,7 @@
 		3DB141322150470B00D85DD9 /* AstronomyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronomyTests.swift; sourceTree = "<group>"; };
 		3DB141342150470B00D85DD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3DB1413A2150482900D85DD9 /* NetworkDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataLoader.swift; sourceTree = "<group>"; };
+		3DB1413C215053A900D85DD9 /* TestJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestJSON.swift; sourceTree = "<group>"; };
 		9DBD20052140D1300047905E /* Astronomy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Astronomy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DBD20082140D1300047905E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DBD200F2140D1300047905E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 			children = (
 				3DB141322150470B00D85DD9 /* AstronomyTests.swift */,
 				3DB141342150470B00D85DD9 /* Info.plist */,
+				3DB1413C215053A900D85DD9 /* TestJSON.swift */,
 			);
 			path = AstronomyTests;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DB141332150470B00D85DD9 /* AstronomyTests.swift in Sources */,
+				3DB1413D215053A900D85DD9 /* TestJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
